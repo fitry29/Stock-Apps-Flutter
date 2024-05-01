@@ -32,6 +32,13 @@ class _StockPageState extends State<StockPage> {
 
   //   super.dispose();
   // }
+  String qtyStock() {
+    double qtyStocks = 0;
+    for (int i = 0; i < stocks.length; i++) {
+      qtyStocks += stocks[i].qty;
+    }
+    return qtyStocks.toStringAsFixed(0);
+  }
 
   String calculateTotal() {
     double totalItem = 0;
@@ -125,6 +132,7 @@ class _StockPageState extends State<StockPage> {
       children: [
         Container(
           width: MediaQuery.of(context).size.width * 0.43,
+          // height: MediaQuery.of(context).size.height * 0.15,
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           decoration: BoxDecoration(
             color: Colors.lightGreen[600],
@@ -180,14 +188,14 @@ class _StockPageState extends State<StockPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'TBD',
+                'Total Stocks',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.005,
               ),
               Text(
-                'RM TBD',
+                qtyStock(),
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

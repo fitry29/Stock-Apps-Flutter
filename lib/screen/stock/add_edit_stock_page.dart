@@ -28,7 +28,7 @@ class _AddEditStockPageState extends State<AddEditStockPage> {
 
     name = widget.stock?.nama ?? '';
     harga = widget.stock?.harga ?? 0;
-    qty = widget.stock?.qty ?? 0;
+    qty = widget.stock?.qty ?? 1;
   }
 
   @override
@@ -100,7 +100,7 @@ class _AddEditStockPageState extends State<AddEditStockPage> {
                 },
                 onPressedRemove: () {
                   setState(() {
-                    if (qty > 0) {
+                    if (qty > 1) {
                       qty--;
                     } else {
                       qty = qty;
@@ -171,6 +171,9 @@ class _AddEditStockPageState extends State<AddEditStockPage> {
 
     await StockDatabase.instance.update(stock);
   }
+
+  // C:\Program Files\Common Files\Oracle\Java\javapath
+  // C:\Program Files (x86)\Common Files\Oracle\Java\javapath
 
   Future addStock() async {
     final stock = Stock(

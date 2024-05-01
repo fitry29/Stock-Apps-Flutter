@@ -38,9 +38,9 @@ class _BottomNavbarState extends State<BottomNavbar> {
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 8,
-        backgroundColor: Colors.green,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.lightGreen,
         selectedIconTheme: IconThemeData(size: 28),
         onTap: onTappedBar,
         type: BottomNavigationBarType.fixed,
